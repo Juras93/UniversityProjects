@@ -1,0 +1,22 @@
+.greetings{
+    position: relative;
+    width: 100%;
+}
+.main{
+    float: left;
+    position: relative;
+    width:60%;
+}
+.newRecipe{
+    float: right;
+    position: relative;
+    width:39%;
+}
+.formControl{
+    width:90%;
+}
+.site{
+    margin-left:10%;
+    margin-right: -10%;
+    width: 80%;
+}
