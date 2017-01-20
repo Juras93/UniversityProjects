@@ -3,17 +3,19 @@
     width: 100%;
 }
 .main{
-    float: left;
+    float: right;
     position: relative;
     width:60%;
 }
 .newRecipe{
-    float: right;
+    float: left;
     position: relative;
     width:39%;
 }
 .formControl{
     width:90%;
+    max-width: 90%;
+    margin-bottom: 10px;
 }
 .site{
     margin-left:10%;
