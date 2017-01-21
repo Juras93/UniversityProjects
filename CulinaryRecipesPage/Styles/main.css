@@ -1,11 +1,12 @@
-.greetings{
+.leftDiv{
+    float: left;
     position: relative;
-    width: 100%;
+    width: 500px;
 }
-.main{
-    float: right;
+.rightDiv{
+    float: left;
     position: relative;
-    width:60%;
+    width: 800px;
 }
 .logo{
     float: left;
@@ -13,12 +14,21 @@
     width:20%;
 }
 .formControl{
-    width:90%;
-    max-width: 90%;
+    width:450;
+    max-width: 450;
     margin-bottom: 10px;
+    height: 30px;
+}
+.formControlDesc{
+    height: 150px;
+    width: 450px;
+    max-width: 450px;
 }
 .loginControl{
     margin-bottom: 10px;
+    width: 300px;
+    height: 30px;
+    max-width: 300px;
 }
 .site{
     margin-left:10%;
@@ -29,6 +39,7 @@
     float: left;
     position:relative;
     width: 59%;
+    height: 50px;
     margin-top: 10px;
 }
 
