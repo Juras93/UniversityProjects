@@ -5,7 +5,7 @@
     <body>
         <div class="site">
             <div class="logo">
-                <img src="../Graphics/przepisyLogo.png"></img>
+                <img src="../Graphics/przepisyWysmienite.png"></img>
             </div>
             <div class="navigationBar">
                 <a href="index.php">Strona Glowna</a>
