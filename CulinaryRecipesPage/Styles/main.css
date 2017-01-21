@@ -7,18 +7,52 @@
     position: relative;
     width:60%;
 }
-.newRecipe{
+.logo{
     float: left;
     position: relative;
-    width:39%;
+    width:20%;
 }
 .formControl{
     width:90%;
     max-width: 90%;
     margin-bottom: 10px;
 }
+.loginControl{
+    margin-bottom: 10px;
+}
 .site{
     margin-left:10%;
     margin-right: -10%;
     width: 80%;
+}
+.navigationBar{
+    float: left;
+    position:relative;
+    width: 59%;
+    margin-top: 10px;
+}
+
+.navigationBar a{
+    border: 2px solid green;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+ /* unvisited link */
+.navigationBar a:link {
+    color: red;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.navigationBar a:hover {
+    background-color: greenyellow; 
+    text-decoration: none;
+}
+
+/* selected link */
+.navigationBar a:active {
+    color: blue;
+    text-decoration: none;
 }
