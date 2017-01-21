@@ -9,12 +9,13 @@
             </div>
             <div class="navigationBar">
                 <a href="index.php">Strona Glowna</a>
+                <a href="index.php">O nas</a>
             </div>
             <div class="main">
                 <div class="leftDiv">
                     <div class="Authorized">
                         <div class="loggedAs">
-
+                            Zalogowany jako <span class="loginName">Guest</span>
                         </div>
                         <div class="addRecipe">
                             <form id="recipeForm">
