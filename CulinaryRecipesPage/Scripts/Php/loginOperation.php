@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 mysql_connect("127.0.0.1","root","root123");
 mysql_select_db("mysql");
 function filtruj($zmienna)
@@ -22,10 +23,10 @@ if (isset($_POST['signingOperation']))
 		// uaktualniamy date logowania oraz ip
 		mysql_query("UPDATE `uzytkownicy` SET (`logowanie` = '".time().", `ip` = '".$ip."'') WHERE login = '".$login."';");
  
-		$_SESSION['signIn'] = true;
+		$_SESSION['signIn'] = TRUE;
 		$_SESSION['login'] = $login;
 
-		echo "zalogowano";
+		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/index.php">';
 	}
 	else echo "Wpisano złe dane.";
 }

@@ -28,7 +28,7 @@ mysql_select_db("mysql");
             <div class="row">
 				<div class="col-md-3 col-s-12">
 				<?php
-				if(isset($_SESSION['signIn']) && $_SESSION['signIn']){
+				if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
 				?>
 					<div class="Authorized">
 						<div class="loggedAs">
@@ -52,8 +52,8 @@ mysql_select_db("mysql");
 							<label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login"><br />
 							<label class="form-check-label">Haslo:</label><input name="password" class="form-control" type="password" placeholder="Password"><br />
 							<input value="Zaloguj" name="signingOperation" class="btn btn-primary" type="submit">
+							<a class="btn btn-info" href="register.php" >Nie masz konta?</a>
 						</form>
-						<a class="btn" href="register.php" >Nie masz konta?</button>
 					</div>
 				<?php } ?>
 				</div>
