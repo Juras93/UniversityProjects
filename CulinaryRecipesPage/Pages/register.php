@@ -28,7 +28,7 @@ mysql_select_db("mysql");
             <div class="row">
 				<div class="col-md-3 col-s-12">
 				<?php
-				if(isset($_SESSION['signIn']) && $_SESSION['signIn']){
+				if(isset($_SESSION['signIn'])){
 				?>
 					<div class="Authorized">
 						<div class="loggedAs">
@@ -48,12 +48,13 @@ mysql_select_db("mysql");
 				} else {
 				?>
 					<div class="noAuthorized">
-						<form method="POST" class="loginForm form-group" action="../Scripts/Php/loginOperation.php">
+						<form method="POST" class="loginForm form-group" action="../Scripts/Php/registerOperation.php">
 							<label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login"><br />
-							<label class="form-check-label">Haslo:</label><input name="password" class="form-control" type="password" placeholder="Password"><br />
-							<input value="Zaloguj" name="signingOperation" class="btn btn-primary" type="submit">
+							<label class="form-check-label">Hasło:</label><input name="password1" class="form-control" type="password" placeholder="Password"><br />
+                            <label class="form-check-label">Powtórz hasło:</label><input name="password2" class="form-control" type="password" placeholder="Password"><br />
+							<label class="form-check-label">E-mail:</label><input name="email" class="form-control" type="text" placeholder="E-mail"><br />
+							<input value="Zarejestruj" name="register" class="btn btn-primary" type="submit">
 						</form>
-						<a class="btn" href="register.php" >Nie masz konta?</button>
 					</div>
 				<?php } ?>
 				</div>
