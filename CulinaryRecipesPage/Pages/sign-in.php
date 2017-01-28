@@ -12,7 +12,7 @@ mysql_select_db("mysql");
     <head>
     </head>
     <body>
-	<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -39,48 +39,50 @@ mysql_select_db("mysql");
 					} else {
 					?>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="sign-in.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li class="active"><a href="sign-in.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 					<?php } ?>
 				</div>
 			</div>
 		</nav>
+
         <div class="container-fluid">
             <div class="row">
-				<div class="col-md-4 col-s-12">
+                <div class="col-md-4 col-s-12">
 					
 				</div>
 				<div class="col-md-3 col-s-12">
 				<?php
-				if(isset($_SESSION['signIn'])){
+				if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
 				?>
 					<div class="Authorized">
 						<div class="loggedAs">
-							<center><span>Zalogowany jako <?php echo $_SESSION['login']?></span></center>
+							Zalogowany jako <?php echo $_SESSION['login']?>
 						</div>
 					</div>
 				<?php
 				} else {
 				?>
-				<?php
-                    if(isset($_SESSION['registreFailed']))
+                <?php
+                    if(isset($_SESSION['signInError']))
                     {
                         ?>
-                        <center><span class="wrongLogin"><?php echo $_SESSION['registreFailed'] ?></span></center>
+                        <center><span class="wrongLogin"><?php echo $_SESSION['signInError'] ?></span></center>
                         <?php
-                        $_SESSION['registreFailed'] = '';
+                        $_SESSION['signInError'] = '';
                     }
                     ?>
 					<div class="noAuthorized">
-						<form method="POST" class="loginForm form-group" action="../Scripts/Php/registerOperation.php">
+						<form method="POST" class="loginForm form-group" action="../Scripts/Php/loginOperation.php">
 							<label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login"><br />
-							<label class="form-check-label">Hasło:</label><input name="password1" class="form-control" type="password" placeholder="Password"><br />
-                            <label class="form-check-label">Powtórz hasło:</label><input name="password2" class="form-control" type="password" placeholder="Password"><br />
-							<label class="form-check-label">E-mail:</label><input name="email" class="form-control" type="text" placeholder="E-mail"><br />
-							<input value="Zarejestruj" name="register" class="btn btn-primary" type="submit">
-						</form>
+							<label class="form-check-label">Haslo:</label><input name="password" class="form-control" type="password" placeholder="Password"><br />
+							<input value="Zaloguj" name="signingOperation" class="btn btn-primary" type="submit">
+						<a class="btn btn-info" href="register.php" >Nie masz konta?</a>
+                        </form>
 					</div>
+                    
+                    
 				<?php } ?>
 				</div>
 				<div class="col-md-4 col-s-12">

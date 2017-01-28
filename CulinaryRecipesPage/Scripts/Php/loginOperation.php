@@ -26,8 +26,16 @@ if (isset($_POST['signingOperation']))
 		$_SESSION['signIn'] = TRUE;
 		$_SESSION['login'] = $login;
 
-		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/index.php">';
+		echo 'Logowanie...';
+
+		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/sign-in.php">';
 	}
-	else echo "Wpisano złe dane.";
+	else
+	{
+		echo 'Logowanie...';
+
+		$_SESSION['signInError'] = "Zly login lub hasło";
+		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/sign-in.php">';
+	}
 }
 ?>
