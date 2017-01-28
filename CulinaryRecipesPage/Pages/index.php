@@ -33,7 +33,7 @@ mysql_select_db("mysql");
 					?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a>Zalogowany jako <?php echo $_SESSION['login']?></a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="../Scripts/Php/logoutOperation.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</ul>
 					<?php
 					} else {
@@ -49,21 +49,21 @@ mysql_select_db("mysql");
 
         <div class="container-fluid">
             <div class="row">
+				<div class="col-md-2 col-s-12"></div>
 				<div class="col-md-3 col-s-12">
 				<?php
 				if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
 				?>
 					<div class="Authorized">
-						<div class="loggedAs">
-							Zalogowany jako <?php echo $_SESSION['login']?>
-						</div>
 						<div class="addRecipe">
 							<form id="recipeForm">
 								<div class="form-group">
-									<label class="form-check-label">Nazwa potrawy:</label><input class="formControl form-control" type="text" placeholder="Wpisz nazwe potrawy"><br />
-									<label class="form-check-label">Przepis:</label><textarea class="formControlDesc form-control" type="text" form="recipeForm"></textarea><br />
-									<button class="btn btn-primary" type="submit">Dodaj przepis</button>
+									<label class="form-check-label">Nazwa potrawy:</label><input class="formControl form-control" type="text" placeholder="Wpisz nazwe potrawy">
 								</div>
+								<div class="form-group">
+									<label class="form-check-label">Przepis:</label><textarea class="formControlDesc form-control" type="text" form="recipeForm"></textarea>
+								</div>
+								<button class="btn btn-primary" type="submit">Dodaj przepis</button>
 							</form>
 						</div>
 					</div>
@@ -71,13 +71,14 @@ mysql_select_db("mysql");
 				} else {
 				?>
 					<div class="noAuthorized">
-						<span>Zaloguj się, aby dodać nowy przepis</span>
+						<span><a class="navbar-link" href="sign-in.php">Zaloguj się</a>, aby dodać nowy przepis</span>
 					</div>
 				<?php } ?>
 				</div>
-				<div class="col-md-9 col-s-12">
+				<div class="col-md-5 col-s-12">
 					
 				</div>
+				<div class="col-md-2 col-s-12"></div>
             </div>
         </div>
     </body>

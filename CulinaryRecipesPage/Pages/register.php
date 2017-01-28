@@ -33,7 +33,7 @@ mysql_select_db("mysql");
 					?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a>Zalogowany jako <?php echo $_SESSION['login']?></a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="../Scripts/Php/logoutOperation.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</ul>
 					<?php
 					} else {
@@ -53,7 +53,7 @@ mysql_select_db("mysql");
 				</div>
 				<div class="col-md-3 col-s-12">
 				<?php
-				if(isset($_SESSION['signIn'])){
+				if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
 				?>
 					<div class="Authorized">
 						<div class="loggedAs">
@@ -74,10 +74,20 @@ mysql_select_db("mysql");
                     ?>
 					<div class="noAuthorized">
 						<form method="POST" class="loginForm form-group" action="../Scripts/Php/registerOperation.php">
-							<label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login"><br />
-							<label class="form-check-label">Hasło:</label><input name="password1" class="form-control" type="password" placeholder="Password"><br />
-                            <label class="form-check-label">Powtórz hasło:</label><input name="password2" class="form-control" type="password" placeholder="Password"><br />
-							<label class="form-check-label">E-mail:</label><input name="email" class="form-control" type="text" placeholder="E-mail"><br />
+							<div class='form-group'>
+								<label class="form-check-label">Login*:</label><input name="login" class="form-control" type="text" placeholder="Login">
+							</div>
+							<div class='form-group'>
+								<label class="form-check-label">Hasło*:</label><input name="password1" class="form-control" type="password" placeholder="Password">
+							</div>
+							<div class='form-group'>
+								<label class="form-check-label">Powtórz hasło*:</label><input name="password2" class="form-control" type="password" placeholder="Password">
+							</div>
+							<div class='form-group'>
+								<label class="form-check-label">E-mail:</label><input name="email" class="form-control" type="text" placeholder="E-mail">
+								<small class="form-text text-muted">* - wymagane</small>
+								</div>
+							
 							<input value="Zarejestruj" name="register" class="btn btn-primary" type="submit">
 						</form>
 					</div>

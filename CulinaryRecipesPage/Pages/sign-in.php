@@ -33,7 +33,7 @@ mysql_select_db("mysql");
 					?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a>Zalogowany jako <?php echo $_SESSION['login']?></a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="../Scripts/Php/logoutOperation.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</ul>
 					<?php
 					} else {
@@ -75,8 +75,12 @@ mysql_select_db("mysql");
                     ?>
 					<div class="noAuthorized">
 						<form method="POST" class="loginForm form-group" action="../Scripts/Php/loginOperation.php">
-							<label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login"><br />
-							<label class="form-check-label">Haslo:</label><input name="password" class="form-control" type="password" placeholder="Password"><br />
+							<div class='form-group'>
+                            <label class="form-check-label">Login:</label><input name="login" class="form-control" type="text" placeholder="Login">
+                            </div>
+                            <div class='form-group'>
+							<label class="form-check-label">Haslo:</label><input name="password" class="form-control" type="password" placeholder="Password">
+                            </div>
 							<input value="Zaloguj" name="signingOperation" class="btn btn-primary" type="submit">
 						<a class="btn btn-info" href="register.php" >Nie masz konta?</a>
                         </form>

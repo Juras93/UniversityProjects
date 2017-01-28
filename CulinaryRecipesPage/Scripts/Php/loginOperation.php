@@ -28,7 +28,7 @@ if (isset($_POST['signingOperation']))
 
 		echo 'Logowanie...';
 
-		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/sign-in.php">';
+		echo '<meta http-equiv="refresh" content="1; URL=../../Pages/index.php">';
 	}
 	else
 	{
