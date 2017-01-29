@@ -76,7 +76,14 @@ mysql_select_db("mysql");
 				<?php } ?>
 				</div>
 				<div class="col-md-5 col-s-12">
-					
+					<?php 
+					include("../Scripts/Php/getRecipesOperation.php");
+					if(isset($_SESSION['recipes'])) {
+						echo $_SESSION['recipes'];
+					} else {
+						echo "<center><label>Brak przepisów</label></center>";
+					}
+					?>
 				</div>
 				<div class="col-md-2 col-s-12"></div>
             </div>
