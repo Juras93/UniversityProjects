@@ -51,39 +51,43 @@ mysql_select_db("mysql");
             <div class="row">
 				<div class="col-md-2 col-s-12"></div>
 				<div class="col-md-3 col-s-12">
-				<?php
-				if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
-				?>
 					<div class="Authorized">
-						<div class="addRecipe">
-							<form id="recipeForm">
-								<div class="form-group">
-									<label class="form-check-label">Nazwa potrawy:</label><input class="formControl form-control" type="text" placeholder="Wpisz nazwe potrawy">
-								</div>
-								<div class="form-group">
-									<label class="form-check-label">Przepis:</label><textarea class="formControlDesc form-control" type="text" form="recipeForm"></textarea>
-								</div>
-								<button class="btn btn-primary" type="submit">Dodaj przepis</button>
-							</form>
-						</div>
-					</div>
-				<?php
-				} else {
-				?>
-					<div class="noAuthorized">
-						<span><a class="navbar-link" href="sign-in.php">Zaloguj się</a>, aby dodać nowy przepis</span>
-					</div>
-				<?php } ?>
-				</div>
-				<div class="col-md-5 col-s-12">
-					<?php 
-					include("../Scripts/Php/getRecipesOperation.php");
-					if(isset($_SESSION['recipes'])) {
-						echo $_SESSION['recipes'];
-					} else {
-						echo "<center><label>Brak przepisów</label></center>";
-					}
+					<?php
+					if(isset($_SESSION['signIn']) && $_SESSION['signIn'] == TRUE){
 					?>
+						<div>
+							<div class="addRecipe">
+								<form id="recipeForm" method="POST" action="../Scripts/Php/addNewRecipe.php">
+									<div class="form-group">
+										<label class="form-check-label">Nazwa potrawy:</label><input class="formControl form-control" name="Potrawa" type="text" placeholder="Wpisz nazwe potrawy">
+									</div>
+									<div class="form-group">
+										<label class="form-check-label">Przepis:</label><textarea class="formControlDesc form-control" name="Przepis" type="text" form="recipeForm"></textarea>
+									</div>
+									<button class="btn btn-primary" type="submit">Dodaj przepis</button>
+								</form>
+							</div>
+						</div>
+					<?php
+					} else {
+					?>
+						<div class="noAuthorized">
+							<span><a class="navbar-link" href="sign-in.php">Zaloguj się</a>, aby dodać nowy przepis</span>
+						</div>
+					<?php } ?>
+					</div>
+				</div>
+				<div class="col-md-5 col-s-12" >
+					<div class="scrollable">
+						<?php 
+						include("../Scripts/Php/getRecipesOperation.php");
+						if(isset($_SESSION['recipes']) && $_SESSION['recipes'] != '') {
+							echo $_SESSION['recipes'];
+						} else {
+							echo "<center><label>Brak przepisów</label></center>";
+						}
+						?>
+					</div>
 				</div>
 				<div class="col-md-2 col-s-12"></div>
             </div>

@@ -35,41 +35,33 @@
     margin-right: -10%;
     width: 80%;
 }
-.navigationBar{
-    float: left;
-    position:relative;
-    width: 59%;
-    height: 50px;
-    margin-top: 10px;
-}
-
-.navigationBar a{
-    border: 2px solid green;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
- /* unvisited link */
-.navigationBar a:link {
-    color: red;
-    text-decoration: none;
-}
-
-/* mouse over link */
-.navigationBar a:hover {
-    background-color: greenyellow; 
-    text-decoration: none;
-}
-
-/* selected link */
-.navigationBar a:active {
-    color: blue;
-    text-decoration: none;
-}
 
 .wrongLogin{
     color:red;
     font-size: 20px;
     text-align: center;
 }
+
+.recipe {
+    border: 5px solid  limegreen;
+    border-radius: 15px 50px;
+    background: lightgreen;
+    padding: 20px;  
+    min-height: 200px;
+    box-shadow: 10px 10px 5px grey;
+    margin-bottom: 15px;
+    opacity: 0.7;
+    width: 100%;
+}
+
+.Authorized{
+    position: fixed;
+    width: inherit;
+}
+
+#recipeForm{
+    width: 90%    
+}
+/*.recipe{
+    border: 1px solid cornflowerblue
+}*/
