@@ -3,6 +3,8 @@
     position: relative;
     width: 500px;
 }
+body { padding-top: 70px; }
+
 .rightDiv{
     float: left;
     position: relative;
@@ -61,6 +63,10 @@
 
 #recipeForm{
     width: 90%    
+}
+
+.fixed{
+    position:fixed;
 }
 /*.recipe{
     border: 1px solid cornflowerblue
