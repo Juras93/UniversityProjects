@@ -3,8 +3,11 @@ Here you can find few simple applications and database scripts creating for Univ
 
 Application called CulinaryRecipesPage in PHP cotains very simple:
 - Login panel
+![alt text](https://cloud.githubusercontent.com/assets/24956354/26802143/af15af82-4a3f-11e7-8052-da8beb1fc3ff.png)
 - New User Panel
+![alt text](https://cloud.githubusercontent.com/assets/24956354/26802115/94e76060-4a3f-11e7-86b5-10d45905ae60.png)
 - Adding new Recipes Module
+![alt text](https://cloud.githubusercontent.com/assets/24956354/26802203/f06067d4-4a3f-11e7-8bfb-c8c4a26920d9.png)
 
 I never thought that creating applications in PHP could be so easy and funny :)
 
