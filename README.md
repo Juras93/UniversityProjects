@@ -14,7 +14,7 @@ I want to create here few simple applications, known better technology like node
 Application with Node.js will be the newest application. I want to create shop or something like this, using Redux design pattern, and AngularJS.
 
 Very useful materials for this applications:
-http://redux.js.org
-https://nodejs.org/en/
-http://getbootstrap.com/
-https://angularjs.org/
+- http://redux.js.org
+- https://nodejs.org/en/
+- http://getbootstrap.com/
+- https://angularjs.org/
