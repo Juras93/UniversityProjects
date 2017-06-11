@@ -1,0 +1,20 @@
+{
+  "name": "MainProject",
+  "version": "1.0.0",
+  "description": "Project based on Nodejs, angularjs",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/Juras93/UniversityProjects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
