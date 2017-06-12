@@ -1,3 +1,14 @@
-div{
-    border: 1px solid black
+.link{
+    width: 100%
+}
+span{
+    font-family: 'Maiandra GD';
+}
+.powitalny{
+    font-size: large;
+    text-align: center;
+}
+.siteLogo{
+    width: 100%;
+    max-height: 500px;
 }
