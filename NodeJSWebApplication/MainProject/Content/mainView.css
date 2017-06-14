@@ -1,5 +1,8 @@
 .link{
-    width: 100%
+    /*width: 100%;*/
+    vertical-align: middle;
+    text-align: center;
+    line-height: 12 !important;
 }
 span{
     font-family: 'Maiandra GD';
@@ -9,6 +12,19 @@ span{
     text-align: center;
 }
 .siteLogo{
-    width: 100%;
-    max-height: 500px;
+    width: 200px;
+    max-height: 100px;
+}
+
+.mainSite{
+    padding-top: 60px;
+    padding-bottom: 110px;
+}
+.actionButton{
+    height: 200px;
+    width: 200px;
+}
+
+.heightRow{
+    height: 10px;
 }

@@ -7,53 +7,32 @@
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../node_modules/angular/angular.min.js"></script>
     </head>
-    <body>
-       <div class="container-fluid">
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#"><span>e-sklep</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a>Zalogowany jako</a></li>
+                <li><a href="../Scripts/Php/logoutOperation.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="sign-in.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+       <div class="container-fluid mainSite">
            <div class="row">
-               <div class="col">
-                    <!--<img class="siteLogo" src="../Graphics/sklepLogo1000x450.jpg">-->
-               </div>
-           </div>
-           <div class="row">
-               <div class="col-md-3 col-s-12">
-                    <div class="row">
-                        <div class="col">
-                            <a class="btn btn-default link">
-                                <span>
-                                    Home
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a class="btn btn-default link">
-                                <span>
-                                    Licytacje
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a class="btn btn-default link">
-                                <span>
-                                    Kup teraz
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a class="btn btn-default link">
-                                <span>
-                                    Zwroty / Zazalenia
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-               </div>
-               <div class="col-md-9 col-s-12">
+                <div class="col-md-12 col-s-12">
                    <div class="row">
                        <div class="col powitalny">
                             <span>Witam w sklepie</span>
@@ -81,6 +60,112 @@
                    </div>
                </div>
            </div>
+           <div class="row heightRow">
+                <div class="col">
+                </div>
+            </div>
+           <div class="row">
+               <div class="col-md-12 col-s-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12"></div>
+                        <div class="col-md-2 col-sm-12">
+                            <center>
+                                <a class="btn btn-info link actionButton">
+                                    <span>
+                                        Home
+                                    </span>
+                                </a>
+                            </center>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <center>
+                                <a class="btn btn-success link actionButton">
+                                    <span>
+                                        Licytacje
+                                    </span>
+                                </a>
+                            </center>
+                        </div>
+                        <div class="col-md-4 col-sm-12"></div>
+                    </div>
+                    <div class="row heightRow">
+                        <div class="col">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12"></div>
+                        <div class="col-md-2 col-sm-12">
+                            <center>
+                                <a class="btn btn-success link actionButton">
+                                    <span>
+                                        Kup teraz
+                                    </span>
+                                </a>
+                            </center>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <center>
+                                <a class="btn btn-info link actionButton">
+                                    <span>
+                                        Zwroty / Zazalenia
+                                    </span>
+                                </a>
+                            </center>
+                        </div>
+                        <div class="col-md-4 col-sm-12"></div>
+                    </div>
+               </div>
+           </div>
        </div> 
+       <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12"></div>
+                    <div class="col-md-3 col-sm-5">
+                        <div class="row">
+                            <div class="col">
+                                <span>
+                                    Kontakt - Obsługa klienta
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span>
+                                    e-mail: obslugaklienta@supersklep.pl
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5">
+                        <div class="row">
+                            <div class="col">
+                                <span>
+                                    Kontakt - Zarząd
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span>
+                                    tel: (12)3456789
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#">
+                                    <span>
+                                        Wyślij nam swoją opinię
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </body>
 </html>
