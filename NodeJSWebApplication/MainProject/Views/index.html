@@ -6,166 +6,239 @@
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
+        <script src="../Scripts/accountController.js"></script>
     </head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#"><span>e-sklep</span></a>
+    <body>
+        <div ng-app="application" ng-controller="accountController">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand" href="#"><span>e-sklep</span></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul ng-show="isUserSignIn" class="nav navbar-nav navbar-right">
+                            <li><a>Zalogowany jako</a></li>
+                            <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        </ul>
+                        <ul ng-show="!isUserSignIn" class="nav navbar-nav navbar-right">
+                            <li><a href="#" data-toggle="modal" data-target="#signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#signIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a>Zalogowany jako</a></li>
-                <li><a href="../Scripts/Php/logoutOperation.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="sign-in.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-       <div class="container-fluid mainSite">
-           <div class="row">
-                <div class="col-md-12 col-s-12">
-                   <div class="row">
-                       <div class="col powitalny">
-                            <span>Witam w sklepie</span>
-                       </div>
-                   </div>
-                   <div class="row">
+        <div>
+        <div class="container-fluid mainSite">
+            <div class="row">
+                    <div class="col-md-12 col-s-12">
+                    <div class="row">
                         <div class="col powitalny">
-                            <span>
-                                Robimy wszystko, by zakupy u nas były tylko i wyłącznie przyjemnością. Codziennie nowe artykuły.
-                            </span>
-                        </div>
-                   </div>
-                   <div class="row">
-                       <div class="col powitalny">
-                            <span>
-                                Oferujemy naszym klientom, najwyższej klasy obsługę, oraz możliwość dowozu zamówienia,
-                                w najdalszy zakątek Polski...
-                            </span>
-                       </div>
-                   </div>
-                   <div class="row">
-                       <div class="col powitalny">
-                            <span>...Bo każdy klient jest nam drogi!</span>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="row heightRow">
-                <div class="col">
-                </div>
-            </div>
-           <div class="row">
-               <div class="col-md-12 col-s-12">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"></div>
-                        <div class="col-md-2 col-sm-12">
-                            <center>
-                                <a class="btn btn-info link actionButton">
-                                    <span>
-                                        Home
-                                    </span>
-                                </a>
-                            </center>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <center>
-                                <a class="btn btn-success link actionButton">
-                                    <span>
-                                        Licytacje
-                                    </span>
-                                </a>
-                            </center>
-                        </div>
-                        <div class="col-md-4 col-sm-12"></div>
-                    </div>
-                    <div class="row heightRow">
-                        <div class="col">
+                                <span>Witam w sklepie</span>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-sm-12"></div>
-                        <div class="col-md-2 col-sm-12">
-                            <center>
-                                <a class="btn btn-success link actionButton">
-                                    <span>
-                                        Kup teraz
-                                    </span>
-                                </a>
-                            </center>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <center>
-                                <a class="btn btn-info link actionButton">
-                                    <span>
-                                        Zwroty / Zazalenia
-                                    </span>
-                                </a>
-                            </center>
-                        </div>
-                        <div class="col-md-4 col-sm-12"></div>
+                            <div class="col powitalny">
+                                <span>
+                                    Robimy wszystko, by zakupy u nas były tylko i wyłącznie przyjemnością. Codziennie nowe artykuły.
+                                </span>
+                            </div>
                     </div>
-               </div>
-           </div>
-       </div> 
-       <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2 col-sm-12"></div>
-                    <div class="col-md-3 col-sm-5">
-                        <div class="row">
-                            <div class="col">
+                    <div class="row">
+                        <div class="col powitalny">
                                 <span>
-                                    Kontakt - Obsługa klienta
+                                    Oferujemy naszym klientom, najwyższej klasy obsługę, oraz możliwość dowozu zamówienia,
+                                    w najdalszy zakątek Polski...
                                 </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <span>
-                                    e-mail: obslugaklienta@supersklep.pl
-                                </span>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-5">
-                        <div class="row">
-                            <div class="col">
-                                <span>
-                                    Kontakt - Zarząd
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <span>
-                                    tel: (12)3456789
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-5">
-                        <div class="row">
-                            <div class="col">
-                                <a href="#">
-                                    <span>
-                                        Wyślij nam swoją opinię
-                                    </span>
-                                </a>
-                            </div>
+                    <div class="row">
+                        <div class="col powitalny">
+                                <span>...Bo każdy klient jest nam drogi!</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
+            <div class="row heightRow">
+                    <div class="col">
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12 col-s-12">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12"></div>
+                            <div class="col-md-2 col-sm-12">
+                                <center>
+                                    <a class="btn btn-info link actionButton">
+                                        <span>
+                                            Home
+                                        </span>
+                                    </a>
+                                </center>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <center>
+                                    <a class="btn btn-success link actionButton">
+                                        <span>
+                                            Licytacje
+                                        </span>
+                                    </a>
+                                </center>
+                            </div>
+                            <div class="col-md-4 col-sm-12"></div>
+                        </div>
+                        <div class="row heightRow">
+                            <div class="col">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12"></div>
+                            <div class="col-md-2 col-sm-12">
+                                <center>
+                                    <a class="btn btn-success link actionButton">
+                                        <span>
+                                            Kup teraz
+                                        </span>
+                                    </a>
+                                </center>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <center>
+                                    <a class="btn btn-info link actionButton">
+                                        <span>
+                                            Zwroty / Zazalenia
+                                        </span>
+                                    </a>
+                                </center>
+                            </div>
+                            <div class="col-md-4 col-sm-12"></div>
+                        </div>
+                </div>
+            </div>
+        </div> 
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12"></div>
+                        <div class="col-md-3 col-sm-5">
+                            <div class="row">
+                                <div class="col">
+                                    <span>
+                                        Kontakt - Obsługa klienta
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span>
+                                        e-mail: obslugaklienta@supersklep.pl
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-5">
+                            <div class="row">
+                                <div class="col">
+                                    <span>
+                                        Kontakt - Zarząd
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span>
+                                        tel: (12)3456789
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-5">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#">
+                                        <span>
+                                            Wyślij nam swoją opinię
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- DIALOGI AUTORYZACYJNE -->
+        <div id="signUp" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Nowe konto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="userNameInput">Nazwa użytkownika:</label>
+                                <input type="text" class="form-control" id="userNameInput" placeholder="Wprowadź nazwę użytkownika">
+                            </div>
+                            <div class="form-group">
+                                <label for="userPasswordInput">Hasło:</label>
+                                <input type="password" class="form-control" id="userPasswordInput" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmailInput">E-Mail:</label>
+                                <input type="email" class="form-control" id="userEmailInput" placeholder="Wprowadź E-mail">
+                            </div>
+                            <button ng-click="signUp()" class="btn btn-primary">Załóż konto</button>
+                        </form>
+                    </div>
+                    <!--<div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div id="signIn" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Logowanie</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="loginUserNameInput">Nazwa użytkownika:</label>
+                                <input type="text" class="form-control" id="loginUserNameInput" placeholder="Wprowadź nazwę użytkownika">
+                            </div>
+                            <div class="form-group">
+                                <label for="loginUserPasswordInput">Hasło:</label>
+                                <input type="password" class="form-control" id="loginUserPasswordInput" placeholder="Password">
+                            </div>
+                            <button ng-click="login()" class="btn btn-primary">Zaloguj</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="info" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Informacja</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span ng-bind="infoToShow"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
