@@ -7,10 +7,36 @@
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../node_modules/angular/angular.min.js"></script>
         <script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
+        <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
         <script src="../Scripts/accountController.js"></script>
     </head>
     <body>
-        <div ng-app="application" ng-controller="accountController">
+        <div ng-app="application" ng-controller="accountController as $accountCtrl" class="controller-account">
+            <script type="text/ng-template" id="loginModal.html">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Nowe konto</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="userNameInput">Nazwa użytkownika:</label>
+                            <input type="text" class="form-control" id="userNameInput" placeholder="Wprowadź nazwę użytkownika">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPasswordInput">Hasło:</label>
+                            <input type="password" class="form-control" id="userPasswordInput" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmailInput">E-Mail:</label>
+                            <input type="email" class="form-control" id="userEmailInput" placeholder="Wprowadź E-mail">
+                        </div>
+                        <button ng-click="$accountCtrl.okButton()" class="btn btn-primary">Załóż konto</button>
+                    </form>
+                </div>
+            </script>
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -22,13 +48,13 @@
                         <a class="navbar-brand" href="#"><span>e-sklep</span></a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul ng-show="isUserSignIn" class="nav navbar-nav navbar-right">
+                        <ul ng-show="$accountCtrl.isUserSignIn" class="nav navbar-nav navbar-right">
                             <li><a>Zalogowany jako</a></li>
-                            <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="#" ng-click="$accountCtrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
-                        <ul ng-show="!isUserSignIn" class="nav navbar-nav navbar-right">
+                        <ul ng-show="!$accountCtrl.isUserSignIn" class="nav navbar-nav navbar-right">
                             <li><a href="#" data-toggle="modal" data-target="#signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#signIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="#" ng-click="$accountCtrl.loginModalOpen()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         </ul>
                     </div>
                 </div>
